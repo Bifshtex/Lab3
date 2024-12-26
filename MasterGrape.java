@@ -1,7 +1,7 @@
 public class MasterGrape extends FruitsAndVegetables implements HelpChipolino {
     //public static boolean greediness = true;
-    public MasterGrape(boolean availabilityOfAwl){
-        super(availabilityOfAwl, "Мастер Виноградинка");
+    public MasterGrape(boolean availabilityOfSmth){
+        super(availabilityOfSmth, "Мастер Виноградинка");
     }
 
     @Override
@@ -10,10 +10,10 @@ public class MasterGrape extends FruitsAndVegetables implements HelpChipolino {
     }
 
     @Override
-    public void helpChipolino(Chipolino chipolino,MasterGrape masterGrape){
-        masterGrape.setAvailabilityOfAwl(false);
-        chipolino.setAvailabilityOfAwl(true);
-        System.out.println("Мастер Виноградинка дала шило");
+    public void helpChipolino(Chipolino chipolino,MasterGrape masterGrape, SomeObjects smth){
+        masterGrape.setAvailabilityOfSmth(false);
+        chipolino.setAvailabilityOfSmth(true);
+        System.out.println("Мастер Виноградинка дала " +smth.getName());
 
 
 

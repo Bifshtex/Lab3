@@ -56,11 +56,11 @@ public class Chipolino extends FruitsAndVegetables implements Return {
         System.out.println(newChipolinoCondition.getDescription());
     }
     @Override
-    public void returnAwl(Chipolino chipolino,MasterGrape masterGrape){
-        if(politeness>20){
-            masterGrape.setAvailabilityOfAwl(true);
-            chipolino.setAvailabilityOfAwl(false);
-            System.out.println(chipolino.getName()+" вернул шило "+masterGrape.getName());
+    public void returnSmth(Chipolino chipolino,MasterGrape masterGrape, SomeObjects smth){
+        if(politeness>50){
+            masterGrape.setAvailabilityOfSmth(true);
+            chipolino.setAvailabilityOfSmth(false);
+            System.out.println(chipolino.getName()+" вернул "+ smth.getName()+" "+masterGrape.getName());
             chipolino.sayingPhrase("– Спасибо, я знаю, что делать.");
         }
         else{
@@ -70,13 +70,29 @@ public class Chipolino extends FruitsAndVegetables implements Return {
 
     public void scratching() throws DullAwlException{
         if(Awl.getSharpness()>50){
-            System.out.println("Шило достаточно острое , чиполино почесался");
+            if(politeness+20<=100){
+                System.out.println("Шило достаточно острое , чиполино почесался");
+                politeness+=20;
+            }
+            else{
+                System.out.println("Шило достаточно острое , чиполино почесался");
+                politeness=100;
+            }
+
         }else{
-            throw new DullAwlException("Шило слишком тупое, оно не чешет");
+            if (politeness>40){
+                politeness-=40;
+                throw new DullAwlException("Шило слишком тупое, чиполино плохо почесался");
+            }
+            else{
+                politeness-=politeness;
+                throw new DullAwlException("Шило слишком тупое, чиполино плохо почесался");
+            }
         }
     }
 
-
+    public double getPoliteness(){
+        return politeness;
+    }
 
 }
-

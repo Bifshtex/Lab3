@@ -11,16 +11,16 @@ public class Main {
         KumPumpkin kumPumpkin= new KumPumpkin(false);
         Environment environment= new Environment();
         Pea pea=new Pea(false);
+        SomeObjects awl = new Awl();
 
 
         //1 aбзац
         masterGrape.sayingPhrase('"'+"Чиполино, будь хорошим овощем."+ '"');
         chipolino.toListen(masterGrape);
         chipolino.askFor(masterGrape);
-        masterGrape.helpChipolino(chipolino, masterGrape);
+        masterGrape.helpChipolino(chipolino, masterGrape, awl);
 
         //исключение с шилом
-        Awl awl = new Awl();
         try {
             chipolino.scratching(); // Пытаемся выполнить действие
         } catch (DullAwlException e) {
@@ -28,7 +28,7 @@ public class Main {
         }
 
 
-        chipolino.returnAwl(chipolino,masterGrape);
+        chipolino.returnSmth(chipolino,masterGrape, awl);
         System.out.println();
 
         chipolino.setChipolinoCondition(ChipolinoCondition.SEARSCHING);
@@ -104,29 +104,27 @@ public class Main {
 
         Random random = new Random();
 
-
         int randomIndex = random.nextInt(phrases.length);
 
-
-        Phrase randomPrases = phrases[randomIndex];
-
+        Phrase randomPhrases = phrases[randomIndex];
 
 
 
 
 
 
-        String g = chipolino.phrasef(randomPrases.ton());
+
+        String g = chipolino.phrasef(randomPhrases.ton());
 
         if (g.contains("Помоги пожалуйста")|g.contains("Только ты можешь помочь")|g.contains("Умоляю")|g.contains("Пожалуйста")){
             System.out.println(g);
-            krot.helpChipolino(chipolino,masterGrape);
+            krot.helpChipolino(chipolino,masterGrape,awl);
         }
         else if (g.contains("Пж")|g.contains("Плиз")|g.contains("Помоги мне")) {
             double r=Math.random()*10;
             if (r>5){
                 System.out.println(g);
-                krot.helpChipolino(chipolino,masterGrape);
+                krot.helpChipolino(chipolino,masterGrape,awl);
             }
             else{
                 System.out.println(g);

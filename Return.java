@@ -1,3 +1,3 @@
 public interface Return {
-    public void returnAwl(Chipolino chipolino,MasterGrape masterGrape);
+    void returnSmth(Chipolino chipolino,MasterGrape masterGrape, SomeObjects smth);
 }

@@ -1,16 +1,18 @@
-public class Awl {
+public class Awl extends SomeObjects {
     private static double sharpness;
 
     public Awl() {
         this.sharpness = Math.random() * 100;
+        this.name="Шило";
     }
 
     public static double getSharpness() {
         return sharpness;
     }
-    /*private String name="Шило";
 
-    public Awl(String name){
+
+
+    /*public Awl(String name){
        this.name="Шило";
     }*/
 

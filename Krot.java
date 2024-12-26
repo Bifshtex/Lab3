@@ -8,7 +8,7 @@ public class Krot implements HelpChipolino {
     String name;
 
     @Override
-    public void helpChipolino(Chipolino chipolino,MasterGrape masterGrape){
+    public void helpChipolino(Chipolino chipolino,MasterGrape masterGrape, SomeObjects smth){
         System.out.println("Чиполино смог убедить крота.\nКрот всё же помог Чиполино.");
     }
 

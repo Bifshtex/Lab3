@@ -1,12 +1,12 @@
 public abstract class FruitsAndVegetables {
-    public FruitsAndVegetables(boolean availabilityOfAwl, String name) {
-        this.availabilityOfAwl = availabilityOfAwl;
+    public FruitsAndVegetables(boolean availabilityOfSmth, String name) {
+        this.availabilityOfSmth = availabilityOfSmth;
         this.name=name;
     }
     private String name;
-    private  boolean availabilityOfAwl;
-    public void setAvailabilityOfAwl(boolean availabilityOfAwl){
-        this.availabilityOfAwl = availabilityOfAwl;
+    private  boolean availabilityOfSmth;
+    public void setAvailabilityOfSmth(boolean availabilityOfSmth){
+        this.availabilityOfSmth = availabilityOfSmth;
     }
 
 
